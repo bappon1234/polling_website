@@ -1,0 +1,60 @@
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+<header>
+  <h1>Poll Application</h1>
+  <button class="menu-toggle" (click)="toggleMenu()">&#9776;</button> <!-- Hamburger menu icon -->
+  <nav [class.show]="menuOpen">
+    <ul>
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/create">Create</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div *ngIf="loading" class="loading">
+  <app-spinner></app-spinner> <!-- Include the spinner here -->
+</div>
+
+<div *ngIf="!loading && polls.length === 0" class="no-polls">
+  <p>No polls available at this time.</p>
+</div>
+
+<div class="poll-container" *ngFor="let poll of polls">
+  <h3>{{ poll.questions }}</h3>
+  <ul>
+    <li *ngFor="let option of poll.options; let i = index">
+      {{ option.text }} - Votes: {{ option.votes }}
+      <button (click)="vote(poll._id, i)">Vote</button>
+    </li>
+  </ul>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-left">
+      <p>&copy; 2024 Poll Application. All rights reserved.</p>
+      <p>Created by Bappon</p>
+    </div>
+    <div class="social-media">
+      <a href="https://www.facebook.com/profile.php?id=100009230723925" target="_blank" aria-label="Facebook">
+        <i class='bx bxl-facebook-circle'></i>
+      </a>
+      <a href="https://www.instagram.com/bappon01234/" target="_blank" aria-label="Instagram">
+        <i class='bx bxl-instagram'></i>
+      </a>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+        <i class='bx bxl-twitter'></i>
+      </a>
+      <a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+        <i class='bx bxl-youtube'></i>
+      </a>
+      <a href="https://github.com/bappon1234" target="_blank" aria-label="GitHub">
+        <i class='bx bxl-github'></i>
+      </a>
+    </div>
+  </div>
+</footer>
+

@@ -1,0 +1,16 @@
+<div class="create-poll-container">
+  <h2>Create Poll</h2>
+  <form (ngSubmit)="createPoll()">
+    <label for="question">Question:</label>
+    <input type="text" id="question" [(ngModel)]="newPoll.questions" name="question" required />
+
+    <div *ngFor="let option of newPoll.options; let i = index">
+      <label for="option{{i}}">Option {{i + 1}}:</label>
+      <input type="text" id="option{{i}}" [(ngModel)]="option.text" name="option{{i}}" required />
+      <button type="button" (click)="removeOption(i)">Remove</button>
+    </div>
+    
+    <button type="button" class="add-option" (click)="addOption()">Add Option</button>
+    <button type="submit">Create Poll</button>
+  </form>
+</div>

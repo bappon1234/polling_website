@@ -1,0 +1,31 @@
+.bouncing-loader {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  margin: 0 5px;
+  background-color: #28d433; /* Change this to your desired color */
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.ball:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.ball:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}

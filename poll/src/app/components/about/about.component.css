@@ -1,0 +1,71 @@
+.container {
+    width: 98%; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0; /* No margin */
+    padding: 20px; /* Add padding inside the container */
+    background-image: url('../../../assets/image/background.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    color: white; /* Change text color for better contrast on the background */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-end; /* Align items to the right */
+    text-align: right; /* Align text to the right */
+}
+
+h1 {
+    font-size: 2.5em; /* Larger font size for the heading */
+    color: black; /* Change heading color */
+    margin: 20px 0 30px; /* Space around the heading */
+}
+
+p {
+    font-size: 1.2em; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Improved line height for better readability */
+    margin-bottom: 30px; /* Space below the paragraph */
+    color: black; /* Change paragraph color */
+    text-align: left; /* Align text to the left */
+    max-width: 350px; /* Limit the width for better line control */
+}
+
+.cta-button {
+    display: inline-block; /* Make the link behave like a button */
+    padding: 12px 20px; /* Padding inside the button */
+    font-size: 1.2em; /* Slightly larger font size for the button text */
+    color: white; /* White text color */
+    background-color: #007bff; /* Bootstrap primary color for the button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from the link */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduce padding for smaller screens */
+        align-items: center; /* Center items on smaller screens */
+        text-align: center; /* Center align text on smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Slightly smaller font size for the heading */
+    }
+
+    p {
+        font-size: 1em; /* Adjust font size for better readability on mobile */
+        max-width: 90%; /* Allow more width on smaller screens */
+    }
+
+    .cta-button {
+        font-size: 1em; /* Adjust font size for the button on mobile */
+    }
+}
